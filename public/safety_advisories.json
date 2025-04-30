@@ -1,0 +1,1477 @@
+{
+    "AD": {
+      "country": "Andorra",
+      "advisory_state": 1,
+      "risk_level": "Low Risk",
+      "general_advisory": "Exercise a high degree of caution"
+    },
+    "AE": {
+      "country": "United Arab Emirates",
+      "advisory_state": 2,
+      "risk_level": "Medium Risk",
+      "general_advisory": "Remain alert and avoid risky areas"
+    },
+    "AF": {
+      "country": "Afghanistan",
+      "advisory_state": 3,
+      "risk_level": "High Risk",
+      "general_advisory": "Avoid non-essential travel due to heightened risks"
+    },
+    "AG": {
+      "country": "Antigua and Barbuda",
+      "advisory_state": 1,
+      "risk_level": "Low Risk",
+      "general_advisory": "Exercise a high degree of caution"
+    },
+    "AI": {
+      "country": "Anguilla",
+      "advisory_state": 2,
+      "risk_level": "Medium Risk",
+      "general_advisory": "Remain alert and avoid risky areas"
+    },
+    "AL": {
+      "country": "Albania",
+      "advisory_state": 3,
+      "risk_level": "High Risk",
+      "general_advisory": "Avoid non-essential travel due to heightened risks"
+    },
+    "AM": {
+      "country": "Armenia",
+      "advisory_state": 1,
+      "risk_level": "Low Risk",
+      "general_advisory": "Exercise a high degree of caution"
+    },
+    "AO": {
+      "country": "Angola",
+      "advisory_state": 2,
+      "risk_level": "Medium Risk",
+      "general_advisory": "Remain alert and avoid risky areas"
+    },
+    "AQ": {
+      "country": "Antarctica",
+      "advisory_state": 3,
+      "risk_level": "High Risk",
+      "general_advisory": "Avoid non-essential travel due to heightened risks"
+    },
+    "AR": {
+      "country": "Argentina",
+      "advisory_state": 1,
+      "risk_level": "Low Risk",
+      "general_advisory": "Exercise a high degree of caution"
+    },
+    "AS": {
+      "country": "American Samoa",
+      "advisory_state": 2,
+      "risk_level": "Medium Risk",
+      "general_advisory": "Remain alert and avoid risky areas"
+    },
+    "AT": {
+      "country": "Austria",
+      "advisory_state": 3,
+      "risk_level": "High Risk",
+      "general_advisory": "Avoid non-essential travel due to heightened risks"
+    },
+    "AU": {
+      "country": "Australia",
+      "advisory_state": 1,
+      "risk_level": "Low Risk",
+      "general_advisory": "Exercise a high degree of caution"
+    },
+    "AW": {
+      "country": "Aruba",
+      "advisory_state": 2,
+      "risk_level": "Medium Risk",
+      "general_advisory": "Remain alert and avoid risky areas"
+    },
+    "AX": {
+      "country": "Åland Islands",
+      "advisory_state": 3,
+      "risk_level": "High Risk",
+      "general_advisory": "Avoid non-essential travel due to heightened risks"
+    },
+    "AZ": {
+      "country": "Azerbaijan",
+      "advisory_state": 1,
+      "risk_level": "Low Risk",
+      "general_advisory": "Exercise a high degree of caution"
+    },
+    "BA": {
+      "country": "Bosnia and Herzegovina",
+      "advisory_state": 2,
+      "risk_level": "Medium Risk",
+      "general_advisory": "Remain alert and avoid risky areas"
+    },
+    "BB": {
+      "country": "Barbados",
+      "advisory_state": 3,
+      "risk_level": "High Risk",
+      "general_advisory": "Avoid non-essential travel due to heightened risks"
+    },
+    "BD": {
+      "country": "Bangladesh",
+      "advisory_state": 1,
+      "risk_level": "Low Risk",
+      "general_advisory": "Exercise a high degree of caution"
+    },
+    "BE": {
+      "country": "Belgium",
+      "advisory_state": 2,
+      "risk_level": "Medium Risk",
+      "general_advisory": "Remain alert and avoid risky areas"
+    },
+        "BF": {
+          "country": "Burkina Faso",
+          "advisory_state": 3,
+          "risk_level": "High Risk",
+          "general_advisory": "Avoid non-essential travel due to heightened risks"
+        },
+        "BG": {
+          "country": "Bulgaria",
+          "advisory_state": 1,
+          "risk_level": "Low Risk",
+          "general_advisory": "Exercise a high degree of caution"
+        },
+        "BH": {
+          "country": "Bahrain",
+          "advisory_state": 2,
+          "risk_level": "Medium Risk",
+          "general_advisory": "Remain alert and avoid risky areas"
+        },
+        "BI": {
+          "country": "Burundi",
+          "advisory_state": 3,
+          "risk_level": "High Risk",
+          "general_advisory": "Avoid non-essential travel due to heightened risks"
+        },
+        "BJ": {
+          "country": "Benin",
+          "advisory_state": 1,
+          "risk_level": "Low Risk",
+          "general_advisory": "Exercise a high degree of caution"
+        },
+        "BL": {
+          "country": "Saint Barthélemy",
+          "advisory_state": 2,
+          "risk_level": "Medium Risk",
+          "general_advisory": "Remain alert and avoid risky areas"
+        },
+        "BM": {
+          "country": "Bermuda",
+          "advisory_state": 3,
+          "risk_level": "High Risk",
+          "general_advisory": "Avoid non-essential travel due to heightened risks"
+        },
+        "BN": {
+          "country": "Brunei Darussalam",
+          "advisory_state": 1,
+          "risk_level": "Low Risk",
+          "general_advisory": "Exercise a high degree of caution"
+        },
+        "BO": {
+          "country": "Bolivia (Plurinational State of)",
+          "advisory_state": 2,
+          "risk_level": "Medium Risk",
+          "general_advisory": "Remain alert and avoid risky areas"
+        },
+        "BQ": {
+          "country": "Bonaire, Sint Eustatius and Saba",
+          "advisory_state": 3,
+          "risk_level": "High Risk",
+          "general_advisory": "Avoid non-essential travel due to heightened risks"
+        },
+        "BR": {
+          "country": "Brazil",
+          "advisory_state": 1,
+          "risk_level": "Low Risk",
+          "general_advisory": "Exercise a high degree of caution"
+        },
+        "BS": {
+          "country": "Bahamas",
+          "advisory_state": 2,
+          "risk_level": "Medium Risk",
+          "general_advisory": "Remain alert and avoid risky areas"
+        },
+        "BT": {
+          "country": "Bhutan",
+          "advisory_state": 3,
+          "risk_level": "High Risk",
+          "general_advisory": "Avoid non-essential travel due to heightened risks"
+        },
+        "BV": {
+          "country": "Bouvet Island",
+          "advisory_state": 1,
+          "risk_level": "Low Risk",
+          "general_advisory": "Exercise a high degree of caution"
+        },
+        "BW": {
+          "country": "Botswana",
+          "advisory_state": 2,
+          "risk_level": "Medium Risk",
+          "general_advisory": "Remain alert and avoid risky areas"
+        },
+        "BY": {
+          "country": "Belarus",
+          "advisory_state": 3,
+          "risk_level": "High Risk",
+          "general_advisory": "Avoid non-essential travel due to heightened risks"
+        },
+        "BZ": {
+          "country": "Belize",
+          "advisory_state": 1,
+          "risk_level": "Low Risk",
+          "general_advisory": "Exercise a high degree of caution"
+        },
+        "CA": {
+          "country": "Canada",
+          "advisory_state": 2,
+          "risk_level": "Medium Risk",
+          "general_advisory": "Remain alert and avoid risky areas"
+        },
+        "CC": {
+          "country": "Cocos (Keeling) Islands",
+          "advisory_state": 3,
+          "risk_level": "High Risk",
+          "general_advisory": "Avoid non-essential travel due to heightened risks"
+        },
+        "CD": {
+          "country": "Congo (Democratic Republic of the)",
+          "advisory_state": 1,
+          "risk_level": "Low Risk",
+          "general_advisory": "Exercise a high degree of caution"
+        }, 
+
+            "CF": {
+              "country": "Central African Republic",
+              "advisory_state": 2,
+              "risk_level": "Medium Risk",
+              "general_advisory": "Remain alert and avoid risky areas"
+            },
+            "CG": {
+              "country": "Congo",
+              "advisory_state": 3,
+              "risk_level": "High Risk",
+              "general_advisory": "Avoid non-essential travel due to heightened risks"
+            },
+            "CH": {
+              "country": "Switzerland",
+              "advisory_state": 1,
+              "risk_level": "Low Risk",
+              "general_advisory": "Exercise a high degree of caution"
+            },
+            "CI": {
+              "country": "Côte d'Ivoire",
+              "advisory_state": 2,
+              "risk_level": "Medium Risk",
+              "general_advisory": "Remain alert and avoid risky areas"
+            },
+            "CK": {
+              "country": "Cook Islands",
+              "advisory_state": 3,
+              "risk_level": "High Risk",
+              "general_advisory": "Avoid non-essential travel due to heightened risks"
+            },
+            "CL": {
+              "country": "Chile",
+              "advisory_state": 1,
+              "risk_level": "Low Risk",
+              "general_advisory": "Exercise a high degree of caution"
+            },
+            "CM": {
+              "country": "Cameroon",
+              "advisory_state": 2,
+              "risk_level": "Medium Risk",
+              "general_advisory": "Remain alert and avoid risky areas"
+            },
+            "CN": {
+              "country": "China",
+              "advisory_state": 3,
+              "risk_level": "High Risk",
+              "general_advisory": "Avoid non-essential travel due to heightened risks"
+            },
+            "CO": {
+              "country": "Colombia",
+              "advisory_state": 1,
+              "risk_level": "Low Risk",
+              "general_advisory": "Exercise a high degree of caution"
+            },
+            "CR": {
+              "country": "Costa Rica",
+              "advisory_state": 2,
+              "risk_level": "Medium Risk",
+              "general_advisory": "Remain alert and avoid risky areas"
+            },
+            "CU": {
+              "country": "Cuba",
+              "advisory_state": 3,
+              "risk_level": "High Risk",
+              "general_advisory": "Avoid non-essential travel due to heightened risks"
+            },
+            "CV": {
+              "country": "Cabo Verde",
+              "advisory_state": 1,
+              "risk_level": "Low Risk",
+              "general_advisory": "Exercise a high degree of caution"
+            },
+            "CW": {
+              "country": "Curaçao",
+              "advisory_state": 2,
+              "risk_level": "Medium Risk",
+              "general_advisory": "Remain alert and avoid risky areas"
+            },
+            "CX": {
+              "country": "Christmas Island",
+              "advisory_state": 3,
+              "risk_level": "High Risk",
+              "general_advisory": "Avoid non-essential travel due to heightened risks"
+            },
+            "CY": {
+              "country": "Cyprus",
+              "advisory_state": 1,
+              "risk_level": "Low Risk",
+              "general_advisory": "Exercise a high degree of caution"
+            },
+            "CZ": {
+              "country": "Czechia",
+              "advisory_state": 2,
+              "risk_level": "Medium Risk",
+              "general_advisory": "Remain alert and avoid risky areas"
+            },
+            "DE": {
+              "country": "Germany",
+              "advisory_state": 3,
+              "risk_level": "High Risk",
+              "general_advisory": "Avoid non-essential travel due to heightened risks"
+            },
+            "DJ": {
+              "country": "Djibouti",
+              "advisory_state": 1,
+              "risk_level": "Low Risk",
+              "general_advisory": "Exercise a high degree of caution"
+            },
+            "DK": {
+              "country": "Denmark",
+              "advisory_state": 2,
+              "risk_level": "Medium Risk",
+              "general_advisory": "Remain alert and avoid risky areas"
+            },
+            "DM": {
+              "country": "Dominica",
+              "advisory_state": 3,
+              "risk_level": "High Risk",
+              "general_advisory": "Avoid non-essential travel due to heightened risks"
+            },
+            "DO": {
+              "country": "Dominican Republic",
+              "advisory_state": 1,
+              "risk_level": "Low Risk",
+              "general_advisory": "Exercise a high degree of caution"
+            },
+            "DZ": {
+    "country": "Algeria",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "EC": {
+    "country": "Ecuador",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "EE": {
+    "country": "Estonia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "EG": {
+    "country": "Egypt",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "EH": {
+    "country": "Western Sahara",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "ER": {
+    "country": "Eritrea",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "ES": {
+    "country": "Spain",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "ET": {
+    "country": "Ethiopia",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "FI": {
+    "country": "Finland",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "FJ": {
+    "country": "Fiji",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "FM": {
+    "country": "Micronesia (Federated States of)",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "FO": {
+    "country": "Faroe Islands",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "FR": {
+    "country": "France",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "GA": {
+    "country": "Gabon",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "GB": {
+    "country": "United Kingdom",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "GD": {
+    "country": "Grenada",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "GE": {
+    "country": "Georgia",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "GF": {
+    "country": "French Guiana",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "GG": {
+    "country": "Guernsey",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "GH": {
+    "country": "Ghana",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "GI": {
+    "country": "Gibraltar",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "GL": {
+    "country": "Greenland",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "GM": {
+    "country": "Gambia",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "GN": {
+    "country": "Guinea",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "GP": {
+    "country": "Guadeloupe",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "GQ": {
+    "country": "Equatorial Guinea",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "GR": {
+    "country": "Greece",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "GT": {
+    "country": "Guatemala",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "GU": {
+    "country": "Guam",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "GW": {
+    "country": "Guinea-Bissau",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "GY": {
+    "country": "Guyana",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "HK": {
+    "country": "Hong Kong",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "HM": {
+    "country": "Heard Island and McDonald Islands",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "HN": {
+    "country": "Honduras",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "HR": {
+    "country": "Croatia",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "HT": {
+    "country": "Haiti",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "HU": {
+    "country": "Hungary",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "ID": {
+    "country": "Indonesia",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "IE": {
+    "country": "Ireland",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "IL": {
+    "country": "Israel",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "IM": {
+    "country": "Isle of Man",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "IN": {
+    "country": "India",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "IO": {
+    "country": "British Indian Ocean Territory",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "IQ": {
+    "country": "Iraq",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "IR": {
+    "country": "Iran (Islamic Republic of)",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "IS": {
+    "country": "Iceland",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "IT": {
+    "country": "Italy",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "JE": {
+    "country": "Jersey",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "JM": {
+    "country": "Jamaica",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "JO": {
+    "country": "Jordan",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "JP": {
+    "country": "Japan",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "KE": {
+    "country": "Kenya",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "KG": {
+    "country": "Kyrgyzstan",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "KH": {
+    "country": "Cambodia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "KI": {
+    "country": "Kiribati",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "KM": {
+    "country": "Comoros",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "KN": {
+    "country": "Saint Kitts and Nevis",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "KP": {
+    "country": "Korea (Democratic People's Republic of)",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "KR": {
+    "country": "Korea (Republic of)",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "KW": {
+    "country": "Kuwait",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "KY": {
+    "country": "Cayman Islands",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "KZ": {
+    "country": "Kazakhstan",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "LA": {
+    "country": "Lao People's Democratic Republic",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "LB": {
+    "country": "Lebanon",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "LC": {
+    "country": "Saint Lucia",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "LI": {
+    "country": "Liechtenstein",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "LK": {
+    "country": "Sri Lanka",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "LR": {
+    "country": "Liberia",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "LS": {
+    "country": "Lesotho",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "LT": {
+    "country": "Lithuania",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "LU": {
+    "country": "Luxembourg",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "LV": {
+    "country": "Latvia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "LY": {
+    "country": "Libya",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "MA": {
+    "country": "Morocco",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "MC": {
+    "country": "Monaco",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "MD": {
+    "country": "Moldova (Republic of)",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "ME": {
+    "country": "Montenegro",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "MF": {
+    "country": "Saint Martin (French part)",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "MG": {
+    "country": "Madagascar",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "MH": {
+    "country": "Marshall Islands",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "MK": {
+    "country": "North Macedonia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "ML": {
+    "country": "Mali",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "MM": {
+    "country": "Myanmar",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "MN": {
+    "country": "Mongolia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "MO": {
+    "country": "Macao",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "MP": {
+    "country": "Northern Mariana Islands",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "MQ": {
+    "country": "Martinique",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "MR": {
+    "country": "Mauritania",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "MS": {
+    "country": "Montserrat",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "MT": {
+    "country": "Malta",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "MU": {
+    "country": "Mauritius",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "MV": {
+    "country": "Maldives",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "MW": {
+    "country": "Malawi",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "MX": {
+    "country": "Mexico",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "MY": {
+    "country": "Malaysia",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "MZ": {
+    "country": "Mozambique",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "NA": {
+    "country": "Namibia",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "NC": {
+    "country": "New Caledonia",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "NE": {
+    "country": "Niger",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "NF": {
+    "country": "Norfolk Island",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "NG": {
+    "country": "Nigeria",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "NI": {
+    "country": "Nicaragua",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "NL": {
+    "country": "Netherlands",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "NO": {
+    "country": "Norway",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "NP": {
+    "country": "Nepal",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "NR": {
+    "country": "Nauru",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "NU": {
+    "country": "Niue",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "NZ": {
+    "country": "New Zealand",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "OM": {
+    "country": "Oman",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "PA": {
+    "country": "Panama",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "PE": {
+    "country": "Peru",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "PF": {
+    "country": "French Polynesia",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "PG": {
+    "country": "Papua New Guinea",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "PH": {
+    "country": "Philippines",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "PK": {
+    "country": "Pakistan",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "PL": {
+    "country": "Poland",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "PM": {
+    "country": "Saint Pierre and Miquelon",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "PN": {
+    "country": "Pitcairn",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "PR": {
+    "country": "Puerto Rico",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "PT": {
+    "country": "Portugal",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  }, 
+  "PW": {
+    "country": "Palau",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "PY": {
+    "country": "Paraguay",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "QA": {
+    "country": "Qatar",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "RE": {
+    "country": "Réunion",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "RO": {
+    "country": "Romania",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "RS": {
+    "country": "Serbia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "RU": {
+    "country": "Russian Federation",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "RW": {
+    "country": "Rwanda",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "SA": {
+    "country": "Saudi Arabia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "SB": {
+    "country": "Solomon Islands",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "SC": {
+    "country": "Seychelles",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "SD": {
+    "country": "Sudan",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "SE": {
+    "country": "Sweden",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "SG": {
+    "country": "Singapore",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "SH": {
+    "country": "Saint Helena, Ascension and Tristan da Cunha",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "SI": {
+    "country": "Slovenia",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "SJ": {
+    "country": "Svalbard and Jan Mayen",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "SK": {
+    "country": "Slovakia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "SL": {
+    "country": "Sierra Leone",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "SM": {
+    "country": "San Marino",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "SN": {
+    "country": "Senegal",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "SO": {
+    "country": "Somalia",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "SR": {
+    "country": "Suriname",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "SS": {
+    "country": "South Sudan",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "ST": {
+    "country": "Sao Tome and Principe",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "SV": {
+    "country": "El Salvador",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "SX": {
+    "country": "Sint Maarten (Dutch part)",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "SY": {
+    "country": "Syrian Arab Republic",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "SZ": {
+    "country": "Eswatini",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "TC": {
+    "country": "Turks and Caicos Islands",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "TD": {
+    "country": "Chad",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "TF": {
+    "country": "French Southern Territories",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "TG": {
+    "country": "Togo",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "TH": {
+    "country": "Thailand",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "TJ": {
+    "country": "Tajikistan",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "TK": {
+    "country": "Tokelau",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "TL": {
+    "country": "Timor-Leste",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "TM": {
+    "country": "Turkmenistan",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "TN": {
+    "country": "Tunisia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "TO": {
+    "country": "Tonga",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "TR": {
+    "country": "Turkey",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "TT": {
+    "country": "Trinidad and Tobago",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "TV": {
+    "country": "Tuvalu",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "TZ": {
+    "country": "Tanzania, United Republic of",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "UA": {
+    "country": "Ukraine",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "UG": {
+    "country": "Uganda",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "UM": {
+    "country": "United States Minor Outlying Islands",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "US": {
+    "country": "United States of America",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "UY": {
+    "country": "Uruguay",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "UZ": {
+    "country": "Uzbekistan",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "VA": {
+    "country": "Holy See",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "VC": {
+    "country": "Saint Vincent and the Grenadines",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "VE": {
+    "country": "Venezuela (Bolivarian Republic of)",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "VG": {
+    "country": "Virgin Islands (British)",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "VI": {
+    "country": "Virgin Islands (U.S.)",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "VN": {
+    "country": "Viet Nam",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "VU": {
+    "country": "Vanuatu",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "WF": {
+    "country": "Wallis and Futuna",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "WS": {
+    "country": "Samoa",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "YE": {
+    "country": "Yemen",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "YT": {
+    "country": "Mayotte",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  },
+  "ZA": {
+    "country": "South Africa",
+    "advisory_state": 3,
+    "risk_level": "High Risk",
+    "general_advisory": "Avoid non-essential travel due to heightened risks"
+  },
+  "ZM": {
+    "country": "Zambia",
+    "advisory_state": 1,
+    "risk_level": "Low Risk",
+    "general_advisory": "Exercise a high degree of caution"
+  },
+  "ZW": {
+    "country": "Zimbabwe",
+    "advisory_state": 2,
+    "risk_level": "Medium Risk",
+    "general_advisory": "Remain alert and avoid risky areas"
+  }
+}
+          
+           
+      
+  
