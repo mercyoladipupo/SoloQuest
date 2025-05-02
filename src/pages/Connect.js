@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+const API_BASE_URL = process.env.REACT_APP_API_URL || "https://soloquest.onrender.com";
 
 const getAuthHeaders = () => {
     const token = localStorage.getItem("access");
@@ -72,7 +72,6 @@ const ConnectTravelers = () => {
     const sendFriendRequest = async (receiverId) => {
         try {
             if (loggedInUser?.id === receiverId) return;
-
             await axios.post(`${API_BASE_URL}/api/send-friend-request/${receiverId}/`, {}, { headers: getAuthHeaders() });
             fetchRequests();
             setSuccessMessage("Request sent! Check 'Friend Requests' tab under Sent Requests.");
@@ -169,11 +168,29 @@ const ConnectTravelers = () => {
                             {request.receiver.first_name} {request.receiver.last_name} ({request.receiver.email})
                             <div>
                                 {request.sender.id === loggedInUser.id ? (
-                                    <span style={styles.pendingLabel}>Pending</span>
+                                    <>
+                                        <span style={styles.pendingLabel}>Pending</span>
+                                        <button
+                                            onClick={() => deleteFriendRequest(request.id)}
+                                            style={styles.deleteButton}
+                                        >
+                                            Cancel Request
+                                        </button>
+                                    </>
                                 ) : (
                                     <>
-                                        <button onClick={() => acceptFriendRequest(request.id)} style={styles.button}>Accept</button>
-                                        <button onClick={() => deleteFriendRequest(request.id)} style={styles.deleteButton}>Delete</button>
+                                        <button
+                                            onClick={() => acceptFriendRequest(request.id)}
+                                            style={styles.button}
+                                        >
+                                            Accept
+                                        </button>
+                                        <button
+                                            onClick={() => deleteFriendRequest(request.id)}
+                                            style={styles.deleteButton}
+                                        >
+                                            Delete
+                                        </button>
                                     </>
                                 )}
                             </div>
@@ -219,7 +236,7 @@ const styles = {
     deleteButton: { background: "#dc3545", color: "white", padding: "5px 10px", border: "none", borderRadius: "5px", cursor: "pointer", marginLeft: "5px" },
     blockButton: { background: "#ff0000", color: "white", padding: "5px 10px", border: "none", borderRadius: "5px", cursor: "pointer", marginLeft: "5px" },
     unblockButton: { background: "#28a745", color: "white", padding: "5px 10px", border: "none", borderRadius: "5px", cursor: "pointer", marginLeft: "5px" },
-    pendingLabel: { background: "#6c757d", color: "white", padding: "5px 10px", borderRadius: "5px", marginLeft: "5px" },
+    pendingLabel: { background: "#6c757d", color: "white", padding: "5px 10px", borderRadius: "5px", marginLeft: "5px", marginRight: "5px" },
     searchInput: { padding: "10px", marginBottom: "20px", width: "60%", borderRadius: "5px", border: "1px solid #ccc" },
     successMessage: { backgroundColor: "#28a745", color: "white", padding: "10px", borderRadius: "5px", marginBottom: "15px" }
 };

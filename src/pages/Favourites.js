@@ -17,7 +17,7 @@ const Favourites = () => {
 
         try {
             console.log("🔍 Token being sent:", token);
-            const response = await axios.get("http://127.0.0.1:8000/country-favorites/", {
+            const response = await axios.get("https://soloquest.onrender.com/country-favorites/", {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -50,7 +50,7 @@ const Favourites = () => {
         if (!token) return;
 
         try {
-            await axios.post("http://127.0.0.1:8000/favorites/add/", { country_code: countryCode }, {
+            await axios.post("https://soloquest.onrender.com/favorites/add/", { country_code: countryCode }, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setMessage("✅ Favorite added!");
@@ -65,7 +65,7 @@ const Favourites = () => {
         if (!token) return;
 
         try {
-            await axios.delete(`http://127.0.0.1:8000/favorites/remove/${countryCode}/`, {
+            await axios.delete(`https://soloquest.onrender.com/favorites/remove/${countryCode}/`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setMessage("✅ Favorite removed!");

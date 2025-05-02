@@ -19,7 +19,7 @@ const SignUpPage = () => {
   useEffect(() => {
     const fetchCSRFToken = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/get-csrf-token/", {
+        const response = await fetch("https://soloquest.onrender.com/api/get-csrf-token/", {
           credentials: "include",
         });
 
@@ -85,7 +85,7 @@ const SignUpPage = () => {
     }
 
     try {
-      const API_BASE_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+      const API_BASE_URL = process.env.REACT_APP_API_URL || "https://soloquest.onrender.com";
       const response = await fetch(`${API_BASE_URL}/api/signup/`, {
         method: "POST",
         headers: {

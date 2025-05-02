@@ -15,7 +15,7 @@ const MyItinerariesPage = () => {
 
   const fetchItineraries = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/my-itineraries/", {
+      const response = await fetch("https://soloquest.onrender.com/api/my-itineraries/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -42,7 +42,7 @@ const MyItinerariesPage = () => {
     if (!window.confirm("Are you sure you want to delete this itinerary?")) return;
 
     try {
-      const response = await fetch(`http://localhost:8000/api/delete-itinerary/${id}/`, {
+      const response = await fetch(`https://soloquest.onrender.com/api/delete-itinerary/${id}/`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -78,7 +78,7 @@ const MyItinerariesPage = () => {
 
   const handleEditSubmit = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/update-itinerary/${editingItinerary.id}/`, {
+      const response = await fetch(`https://soloquest.onrender.com/api/update-itinerary/${editingItinerary.id}/`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -16,7 +16,7 @@ const BlogPage = () => {
         const userPayload = token ? JSON.parse(atob(token.split('.')[1])) : null;
         setUserEmail(userPayload?.email);
 
-        const response = await axios.get('http://127.0.0.1:8000/posts/');
+        const response = await axios.get('https://soloquest.onrender.com/posts/');
         setBlogs(Array.isArray(response.data) ? response.data : []);
         setLoading(false);
       } catch (error) {
@@ -31,7 +31,7 @@ const BlogPage = () => {
 
   const handleLike = async (postId) => {
     try {
-      const response = await axios.post(`http://127.0.0.1:8000/posts/${postId}/like/`);
+      const response = await axios.post(`https://soloquest.onrender.com/posts/${postId}/like/`);
       setBlogs((prevBlogs) =>
         prevBlogs.map((blog) =>
           blog.id === postId ? { ...blog, likes_count: response.data.likes_count } : blog
@@ -53,7 +53,7 @@ const BlogPage = () => {
 
     try {
       const response = await axios.post(
-        `http://127.0.0.1:8000/posts/${postId}/comment/`,
+        `https://soloquest.onrender.com/posts/${postId}/comment/`,
         { content: commentText[postId] },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -75,7 +75,7 @@ const BlogPage = () => {
     const token = localStorage.getItem('access');
     if (!token) return;
     try {
-      await axios.delete(`http://127.0.0.1:8000/comments/${commentId}/`, {
+      await axios.delete(`https://soloquest.onrender.com/comments/${commentId}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBlogs((prevBlogs) =>
@@ -95,7 +95,7 @@ const BlogPage = () => {
     if (!token) return;
     try {
       const response = await axios.put(
-        `http://127.0.0.1:8000/comments/${commentId}/`,
+        `https://soloquest.onrender.com/comments/${commentId}/`,
         { content: editingComment[commentId] },
         { headers: { Authorization: `Bearer ${token}` } }
       );

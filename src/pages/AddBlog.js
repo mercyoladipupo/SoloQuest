@@ -19,7 +19,7 @@ const AddBlog = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/categories/');
+      const response = await axios.get('https://soloquest.onrender.com/categories/');
       setCategories(response.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
@@ -55,7 +55,7 @@ const AddBlog = () => {
 
     try {
       console.log("Sending request...");  // ✅ Debugging log
-      await axios.post('http://127.0.0.1:8000/posts/', formData, {
+      await axios.post('https://soloquest.onrender.com/posts/', formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
