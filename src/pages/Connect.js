@@ -63,12 +63,14 @@ const ConnectTravelers = () => {
       });
       const userId = loggedInUser?.id;
       const filtered = response.data
-        .filter(req => req.sender.id === userId || req.receiver.id === userId)
+        .filter(req =>
+          (req.sender.id === userId || req.receiver.id === userId) && req.status === "pending"
+        )
         .map(req => ({
           id: req.id,
           sender: req.sender,
           receiver: req.receiver,
-          status: req.status  // ✅ include status
+          status: req.status
         }));
       setRequests(filtered);
     } catch (error) {
@@ -104,7 +106,7 @@ const ConnectTravelers = () => {
 
   const acceptFriendRequest = async (requestId) => {
     try {
-      await axios.post(`${API_BASE_URL}/api/accept-friend-request/${requestId}/`, {}, {
+      await axios.post(`${API_BASE_URL}/api/users/${requestId}/accept_friend_request/`, {}, {
         headers: getAuthHeaders(),
       });
       fetchFriends();
