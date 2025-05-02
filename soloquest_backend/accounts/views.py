@@ -42,21 +42,12 @@ def change_password(request):
     user = request.user
     data = request.data
 
-    current_password = data.get("current_password")
-    new_password = data.get("new_password")
+    if not user.check_password(data['current_password']):
+        return Response({'error': 'Current password is incorrect.'}, status=400)
 
-    if not current_password or not new_password:
-        return Response({"error": "All fields are required."}, status=status.HTTP_400_BAD_REQUEST)
-
-    if not check_password(current_password, user.password):
-        return Response({"error": "Current password is incorrect."}, status=status.HTTP_400_BAD_REQUEST)
-
-    if len(new_password) < 8:
-        return Response({"error": "New password must be at least 8 characters."}, status=status.HTTP_400_BAD_REQUEST)
-
-    user.set_password(new_password)
+    user.set_password(data['new_password'])
     user.save()
-    return Response({"message": "Password updated successfully."}, status=status.HTTP_200_OK)
+    return Response({'message': 'Password changed successfully.'})
 
 class SignUpView(generics.CreateAPIView):
     serializer_class = UserSignUpSerializer
@@ -706,3 +697,40 @@ def delete_friend_request(request, request_id):
     friend_request.delete()
     return Response({"message": "Friend request deleted."}, status=status.HTTP_200_OK)
 
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
+from .models import FriendRequest
+import jwt
+from django.conf import settings
+
+def get_user_from_token(request):
+    auth = request.headers.get('Authorization')
+    if auth and auth.startswith('Bearer '):
+        token = auth.split(' ')[1]
+        try:
+            payload = jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])
+            return User.objects.get(id=payload['user_id'])
+        except Exception as e:
+            print(f"Token decoding error: {e}")
+            return None
+    return None
+
+@csrf_exempt
+def delete_friend_request(request, request_id):
+    if request.method == 'DELETE':
+        user = get_user_from_token(request)
+        if not user:
+            return JsonResponse({'error': 'Unauthorized'}, status=403)
+
+        try:
+            friend_request = FriendRequest.objects.get(id=request_id)
+            if user != friend_request.from_user and user != friend_request.to_user:
+                return JsonResponse({'error': 'Forbidden'}, status=403)
+
+            friend_request.delete()
+            return JsonResponse({'message': 'Friend request deleted'})
+        except FriendRequest.DoesNotExist:
+            return JsonResponse({'error': 'Friend request not found'}, status=404)
+
+    return JsonResponse({'error': 'Invalid request method'}, status=405)

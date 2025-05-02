@@ -54,6 +54,8 @@ urlpatterns = [
     path("api/update-itinerary/<int:id>/", update_itinerary, name="update-itinerary"),
     path("api/accept-friend-request/<int:request_id>/", accept_friend_request, name="accept-friend-request"),
     path("api/delete-friend-request/<int:request_id>/", delete_friend_request, name="delete-friend-request"),
+    path('api/change-password/', views.change_password, name='change_password'),
+
 
 ]
 
