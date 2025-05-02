@@ -334,18 +334,7 @@ def send_friend_request(request, user_id):
         }
     }, status=201)
     
-@api_view(['DELETE'])
-@permission_classes([IsAuthenticated])
-def delete_friend_request(request, request_id):
-    """Deletes a friend request"""
-    friend_request = get_object_or_404(FriendRequest, id=request_id)
 
-    # Ensure only the sender or receiver can delete the request
-    if friend_request.sender != request.user and friend_request.receiver != request.user:
-        return Response({"error": "Unauthorized"}, status=403)
-
-    friend_request.delete()
-    return Response({"message": "Friend request deleted successfully"}, status=200)
 
 
 
@@ -686,17 +675,6 @@ def accept_friend_request(request, request_id):
     return Response({"message": "Friend request accepted."}, status=status.HTTP_200_OK)
 
 
-@api_view(['DELETE'])
-@permission_classes([IsAuthenticated])
-def delete_friend_request(request, request_id):
-    friend_request = get_object_or_404(FriendRequest, id=request_id)
-
-    if friend_request.sender != request.user and friend_request.receiver != request.user:
-        return Response({"error": "You are not authorized to delete this request."}, status=status.HTTP_403_FORBIDDEN)
-
-    friend_request.delete()
-    return Response({"message": "Friend request deleted."}, status=status.HTTP_200_OK)
-
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user_model
@@ -727,7 +705,7 @@ def delete_friend_request(request, request_id):
 
         try:
             friend_request = FriendRequest.objects.get(id=request_id)
-            if user != friend_request.from_user and user != friend_request.to_user:
+            if user != friend_request.sender and user != friend_request.receiver:
                 return JsonResponse({'error': 'Forbidden'}, status=403)
 
             friend_request.delete()
@@ -736,3 +714,4 @@ def delete_friend_request(request, request_id):
             return JsonResponse({'error': 'Friend request not found'}, status=404)
 
     return JsonResponse({'error': 'Invalid request method'}, status=405)
+
