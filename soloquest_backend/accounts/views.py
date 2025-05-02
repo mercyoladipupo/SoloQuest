@@ -426,9 +426,15 @@ class UserViewSet(viewsets.ModelViewSet):
 
 # ✅ Friend Request ViewSet
 class FriendRequestViewSet(viewsets.ModelViewSet):
-    queryset = FriendRequest.objects.all()
     serializer_class = FriendRequestSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        return FriendRequest.objects.filter(
+            models.Q(sender=user) | models.Q(receiver=user)
+        )
+
 
 # ✅ Friendship ViewSet
 class FriendshipViewSet(viewsets.ModelViewSet):
