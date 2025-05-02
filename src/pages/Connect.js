@@ -191,26 +191,28 @@ const ConnectTravelers = () => {
 
       {activeTab === "requests" && (
         <ul style={styles.list}>
-          {requests.map(request => (
-            <li key={request.id} style={styles.userCard}>
-              {request.sender.id === loggedInUser.id
-                ? `${request.receiver.first_name} ${request.receiver.last_name} (${request.receiver.email})`
-                : `${request.sender.first_name} ${request.sender.last_name} (${request.sender.email})`}
-              <div>
-                {request.sender.id === loggedInUser.id ? (
-                  <>
-                    <span style={styles.pendingLabel}>Pending</span>
-                    <button onClick={() => deleteFriendRequest(request.id)} style={styles.deleteButton}>Cancel Request</button>
-                  </>
-                ) : (
-                  <>
-                    <button onClick={() => acceptFriendRequest(request.id)} style={styles.button}>Accept</button>
-                    <button onClick={() => deleteFriendRequest(request.id)} style={styles.deleteButton}>Delete</button>
-                  </>
-                )}
-              </div>
-            </li>
-          ))}
+          {requests.map(request => {
+            const isSender = request.sender.id === loggedInUser.id;
+            const otherUser = isSender ? request.receiver : request.sender;
+            return (
+              <li key={request.id} style={styles.userCard}>
+                {otherUser.first_name} {otherUser.last_name} ({otherUser.email})
+                <div>
+                  {isSender ? (
+                    <>
+                      <span style={styles.pendingLabel}>Pending</span>
+                      <button onClick={() => deleteFriendRequest(request.id)} style={styles.deleteButton}>Cancel Request</button>
+                    </>
+                  ) : (
+                    <>
+                      <button onClick={() => acceptFriendRequest(request.id)} style={styles.button}>Accept</button>
+                      <button onClick={() => deleteFriendRequest(request.id)} style={styles.deleteButton}>Delete</button>
+                    </>
+                  )}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       )}
 
