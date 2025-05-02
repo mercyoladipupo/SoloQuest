@@ -668,17 +668,16 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404
 from .models import FriendRequest, Friendship
 
+# views.py
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def accept_friend_request(request, request_id):
     friend_request = get_object_or_404(FriendRequest, id=request_id, receiver=request.user, status="pending")
     friend_request.status = "accepted"
     friend_request.save()
-
-    # Create the friendship
     Friendship.objects.create(user1=friend_request.sender, user2=friend_request.receiver)
-
     return Response({"message": "Friend request accepted."}, status=status.HTTP_200_OK)
+
 
 
 from django.http import JsonResponse
