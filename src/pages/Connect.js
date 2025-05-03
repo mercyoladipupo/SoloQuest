@@ -50,7 +50,11 @@ const ConnectTravelers = () => {
       const response = await axios.get(`${API_BASE_URL}/api/friends/`, {
         headers: getAuthHeaders(),
       });
-      setFriends(response.data);
+      const currentUserId = loggedInUser.id;
+      const friendList = response.data.map(f => {
+        return f.user1.id === currentUserId ? f.user2 : f.user1;
+      });
+      setFriends(friendList);
     } catch (error) {
       console.error("❌ Error fetching friends:", error.response?.data || error.message);
     }
@@ -109,15 +113,8 @@ const ConnectTravelers = () => {
       await axios.post(`${API_BASE_URL}/api/accept-friend-request/${requestId}/`, {}, {
         headers: getAuthHeaders(),
       });
-
-      // ✅ Optimistically add friend to list
-      const request = requests.find(req => req.id === requestId);
-      if (request) {
-        const newFriend = request.sender.id !== loggedInUser.id ? request.sender : request.receiver;
-        setFriends(prev => [...prev, newFriend]);
-        setRequests(prev => prev.filter(req => req.id !== requestId));
-      }
-
+      fetchFriends();
+      fetchRequests();
       setSuccessMessage("Friend request accepted!");
       setTimeout(() => setSuccessMessage(""), 3000);
     } catch (error) {
