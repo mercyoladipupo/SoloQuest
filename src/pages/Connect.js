@@ -12,7 +12,6 @@ const ConnectTravelers = () => {
   const [users, setUsers] = useState([]);
   const [friends, setFriends] = useState([]);
   const [requests, setRequests] = useState([]);
-  const [blockedUsers, setBlockedUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("users");
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,7 +28,6 @@ const ConnectTravelers = () => {
       fetchUsers(),
       fetchFriends(),
       fetchRequests(),
-      fetchBlockedUsers(),
     ]);
     setLoading(false);
   };
@@ -82,17 +80,6 @@ const ConnectTravelers = () => {
     }
   };
 
-  const fetchBlockedUsers = async () => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/api/blocked-users/`, {
-        headers: getAuthHeaders(),
-      });
-      setBlockedUsers(response.data);
-    } catch (error) {
-      console.error("❌ Error fetching blocked users:", error.response?.data || error.message);
-    }
-  };
-
   const sendFriendRequest = async (receiverId) => {
     try {
       if (loggedInUser?.id === receiverId) return;
@@ -133,28 +120,6 @@ const ConnectTravelers = () => {
     }
   };
 
-  const blockUser = async (userId) => {
-    try {
-      await axios.post(`${API_BASE_URL}/api/block-user/${userId}/`, {}, {
-        headers: getAuthHeaders(),
-      });
-      fetchBlockedUsers();
-    } catch (error) {
-      console.error("❌ Error blocking user:", error.response?.data || error.message);
-    }
-  };
-
-  const unblockUser = async (blockedId) => {
-    try {
-      await axios.post(`${API_BASE_URL}/api/unblock-user/${blockedId}/`, {}, {
-        headers: getAuthHeaders(),
-      });
-      fetchBlockedUsers();
-    } catch (error) {
-      console.error("❌ Error unblocking user:", error.response?.data || error.message);
-    }
-  };
-
   const filteredUsers = users.filter(user =>
     user.id !== loggedInUser?.id &&
     `${user.first_name} ${user.last_name} ${user.email}`.toLowerCase().includes(searchTerm.toLowerCase())
@@ -168,9 +133,10 @@ const ConnectTravelers = () => {
 
       <div style={styles.tabs}>
         <button style={activeTab === "users" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("users")}>All Users</button>
-        <button style={activeTab === "requests" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("requests")}>Friend Requests</button>
-        <button style={activeTab === "friends" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("friends")}>Friends</button>
-        <button style={activeTab === "blocked" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("blocked")}>Blocked Users</button>
+
+        <button style={activeTab === "requests" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("requests")}>Friend Requests {requests.length > 0 && <span style={styles.badge}>{requests.length}</span>}</button>
+
+        <button style={activeTab === "friends" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("friends")}>Friends {friends.length > 0 && <span style={styles.badge}>{friends.length}</span>}</button>
       </div>
 
       {successMessage && <div style={styles.successMessage}>{successMessage}</div>}
@@ -190,7 +156,6 @@ const ConnectTravelers = () => {
                 {user.first_name} {user.last_name} ({user.email})
                 <div>
                   <button onClick={() => sendFriendRequest(user.id)} style={styles.button}>Add Friend</button>
-                  <button onClick={() => blockUser(user.id)} style={styles.blockButton}>Block</button>
                 </div>
               </li>
             ))}
@@ -232,19 +197,6 @@ const ConnectTravelers = () => {
           ))}
         </ul>
       )}
-
-      {activeTab === "blocked" && (
-        <ul style={styles.list}>
-          {blockedUsers.map(blocked => (
-            <li key={blocked.id} style={styles.userCard}>
-              {blocked.blocked.first_name} {blocked.blocked.last_name} ({blocked.blocked.email})
-              <div>
-                <button onClick={() => unblockUser(blocked.id)} style={styles.unblockButton}>Unblock</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
 };
@@ -254,12 +206,11 @@ const styles = {
   tabs: { display: "flex", justifyContent: "center", gap: "10px", marginBottom: "20px" },
   tab: { padding: "10px", cursor: "pointer", background: "#444", color: "white", border: "none", borderRadius: "5px" },
   activeTab: { padding: "10px", cursor: "pointer", background: "#007bff", color: "white", border: "none", borderRadius: "5px" },
+  badge: { backgroundColor: "#dc3545", color: "white", padding: "2px 8px", borderRadius: "50%", fontSize: "0.8rem", marginLeft: "8px" },
   list: { listStyleType: "none", padding: 0 },
   userCard: { padding: "10px", borderBottom: "1px solid #ccc", marginBottom: "10px" },
   button: { background: "#007bff", color: "white", padding: "5px 10px", border: "none", borderRadius: "5px", cursor: "pointer", marginLeft: "5px" },
   deleteButton: { background: "#dc3545", color: "white", padding: "5px 10px", border: "none", borderRadius: "5px", cursor: "pointer", marginLeft: "5px" },
-  blockButton: { background: "#ff0000", color: "white", padding: "5px 10px", border: "none", borderRadius: "5px", cursor: "pointer", marginLeft: "5px" },
-  unblockButton: { background: "#28a745", color: "white", padding: "5px 10px", border: "none", borderRadius: "5px", cursor: "pointer", marginLeft: "5px" },
   pendingLabel: { background: "#6c757d", color: "white", padding: "5px 10px", borderRadius: "5px", marginLeft: "5px", marginRight: "5px" },
   searchInput: { padding: "10px", marginBottom: "20px", width: "60%", borderRadius: "5px", border: "1px solid #ccc" },
   successMessage: { backgroundColor: "#28a745", color: "white", padding: "10px", borderRadius: "5px", marginBottom: "15px" }
