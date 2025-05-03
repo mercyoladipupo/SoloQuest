@@ -106,11 +106,20 @@ const ConnectTravelers = () => {
 
   const acceptFriendRequest = async (requestId) => {
     try {
-      await axios.post(`${API_BASE_URL}/api/users/${requestId}/accept_friend_request/`, {}, {
+      await axios.post(`${API_BASE_URL}/api/accept-friend-request/${requestId}/`, {}, {
         headers: getAuthHeaders(),
       });
-      fetchFriends();
-      fetchRequests();
+
+      // ✅ Optimistically add friend to list
+      const request = requests.find(req => req.id === requestId);
+      if (request) {
+        const newFriend = request.sender.id !== loggedInUser.id ? request.sender : request.receiver;
+        setFriends(prev => [...prev, newFriend]);
+        setRequests(prev => prev.filter(req => req.id !== requestId));
+      }
+
+      setSuccessMessage("Friend request accepted!");
+      setTimeout(() => setSuccessMessage(""), 3000);
     } catch (error) {
       console.error("❌ Error accepting friend request:", error.response?.data || error.message);
     }
