@@ -23,23 +23,43 @@ const DashboardPage = () => {
       if (storedUser && storedUser !== "undefined") {
         try {
           const parsedUser = JSON.parse(storedUser);
-          setUser(parsedUser);
-          console.log("✅ User loaded:", parsedUser);
+
+          if (parsedUser && parsedUser.first_name && parsedUser.email) {
+            setUser(parsedUser);
+            console.log("✅ User loaded:", parsedUser);
+            setLoading(false);
+          } else {
+            console.warn("⚠️ Incomplete user object, redirecting...");
+            localStorage.removeItem("user");
+            navigate("/signin");
+          }
         } catch (error) {
           console.error("❌ Error parsing user data:", error);
           localStorage.removeItem("user");
           navigate("/signin");
         }
       } else {
-        console.warn("⚠️ No valid user found, redirecting...");
-        setTimeout(() => navigate("/signin"), 150); // Slight delay to let storage settle
-      }
+        console.warn("⚠️ No user found, retrying...");
+        // Retry once after a short delay in case localStorage is being written
+        setTimeout(() => {
+          const retryUser = localStorage.getItem("user");
+          if (retryUser && retryUser !== "undefined") {
+            try {
+              const parsedRetryUser = JSON.parse(retryUser);
+              if (parsedRetryUser?.email) {
+                setUser(parsedRetryUser);
+                setLoading(false);
+                return;
+              }
+            } catch {}
+          }
 
-      setLoading(false);
+          navigate("/signin");
+        }, 300); // Retry in 300ms
+      }
     };
 
-    // Slight delay on first load to allow for smoother storage sync
-    setTimeout(checkUser, 100);
+    checkUser();
   }, [navigate]);
 
   const handleLogout = () => {
