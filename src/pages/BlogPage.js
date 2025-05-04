@@ -61,7 +61,10 @@ const BlogPage = () => {
       setBlogs((prevBlogs) =>
         prevBlogs.map((blog) =>
           blog.id === postId
-            ? { ...blog, comments: [...(Array.isArray(blog.comments) ? blog.comments : []), response.data] }
+            ? {
+                ...blog,
+                comments: [...(Array.isArray(blog.comments) ? blog.comments : []), response.data]
+              }
             : blog
         )
       );
@@ -167,12 +170,11 @@ const BlogPage = () => {
                 ))}
               </div>
               <div style={styles.commentForm}>
-                <input
-                  type="text"
+                <textarea
                   placeholder="Write a comment..."
                   value={commentText[blog.id] || ''}
                   onChange={(e) => setCommentText({ ...commentText, [blog.id]: e.target.value })}
-                  style={styles.commentInput}
+                  style={styles.commentTextarea}
                 />
                 <button onClick={() => handleCommentSubmit(blog.id)} style={styles.commentButton}>
                   Add Comment
@@ -235,21 +237,27 @@ const styles = {
   },
   commentForm: {
     display: 'flex',
+    flexDirection: 'column',
     gap: '10px'
   },
-  commentInput: {
-    flex: 1,
-    padding: '6px',
+  commentTextarea: {
+    width: '100%',
+    minHeight: '80px',
+    padding: '10px',
     borderRadius: '5px',
-    border: 'none'
+    border: 'none',
+    resize: 'vertical',
+    fontSize: '1rem',
+    marginBottom: '10px',
   },
   commentButton: {
     background: '#10b981',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
-    padding: '6px 12px',
-    cursor: 'pointer'
+    padding: '10px 12px',
+    cursor: 'pointer',
+    fontSize: '1rem'
   }
 };
 
