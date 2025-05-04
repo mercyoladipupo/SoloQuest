@@ -15,47 +15,37 @@ const DashboardPage = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const MAX_RETRIES = 3;
 
   useEffect(() => {
+    let retries = 0;
+
     const checkUser = () => {
       const storedUser = localStorage.getItem("user");
 
       if (storedUser && storedUser !== "undefined") {
         try {
           const parsedUser = JSON.parse(storedUser);
-
-          if (parsedUser && parsedUser.first_name && parsedUser.email) {
+          if (parsedUser && parsedUser.email) {
             setUser(parsedUser);
-            console.log("✅ User loaded:", parsedUser);
             setLoading(false);
-          } else {
-            console.warn("⚠️ Incomplete user object, redirecting...");
-            localStorage.removeItem("user");
-            navigate("/signin");
+            console.log("✅ User loaded:", parsedUser);
+            return;
           }
         } catch (error) {
-          console.error("❌ Error parsing user data:", error);
-          localStorage.removeItem("user");
-          navigate("/signin");
+          console.error("❌ Error parsing user:", error);
         }
-      } else {
-        console.warn("⚠️ No user found, retrying...");
-        // Retry once after a short delay in case localStorage is being written
-        setTimeout(() => {
-          const retryUser = localStorage.getItem("user");
-          if (retryUser && retryUser !== "undefined") {
-            try {
-              const parsedRetryUser = JSON.parse(retryUser);
-              if (parsedRetryUser?.email) {
-                setUser(parsedRetryUser);
-                setLoading(false);
-                return;
-              }
-            } catch {}
-          }
+      }
 
-          navigate("/signin");
-        }, 300); // Retry in 300ms
+      // Retry up to MAX_RETRIES
+      if (retries < MAX_RETRIES) {
+        console.warn("⚠️ No user found, retrying...");
+        retries++;
+        setTimeout(checkUser, 300);
+      } else {
+        console.error("❌ Failed to load user after retries. Redirecting...");
+        localStorage.removeItem("user");
+        navigate("/signin");
       }
     };
 
