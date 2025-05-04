@@ -53,10 +53,8 @@ const SignUpPage = () => {
     if (!formData.email) newErrors.email = "Email is required.";
     if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Invalid email format.";
     if (!formData.password) newErrors.password = "Password is required.";
-    if (formData.password.length < 8)
-      newErrors.password = "Password must be at least 8 characters.";
-    if (formData.password !== formData.confirmPassword)
-      newErrors.confirmPassword = "Passwords do not match.";
+    if (formData.password.length < 8) newErrors.password = "Password must be at least 8 characters.";
+    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Passwords do not match.";
     return newErrors;
   };
 
@@ -85,22 +83,26 @@ const SignUpPage = () => {
     }
 
     try {
-      const API_BASE_URL = process.env.REACT_APP_API_URL || "https://soloquest.onrender.com";
+      const API_BASE_URL = "https://soloquest.onrender.com";
       const response = await fetch(`${API_BASE_URL}/api/signup/`, {
         method: "POST",
+        headers: {
+          "X-CSRFToken": csrfToken,
+        },
         body: formDataToSend,
         credentials: "include",
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        const data = await response.json();
         localStorage.setItem("access_token", data.access);
         localStorage.setItem("refresh_token", data.refresh);
         localStorage.setItem("user", JSON.stringify(data.user));
-        navigate("/dashboard", { state: { user: data.user } });
+        navigate("/dashboard");
       } else {
-        const errorData = await response.json();
-        alert(errorData.error || "An error occurred during sign-up.");
+        const backendErrors = data?.errors || data?.detail || data?.error;
+        alert(backendErrors || "An error occurred during sign-up.");
       }
     } catch (error) {
       console.error("Sign-up error:", error);
@@ -114,7 +116,7 @@ const SignUpPage = () => {
     <div style={{ textAlign: "center", padding: "50px" }}>
       <h2>Sign Up</h2>
       <p style={{ fontSize: "2rem" }}>Create an account to join the SoloQuest community!</p>
-      {csrfToken && (
+      {csrfToken ? (
         <>
           <form
             onSubmit={handleSubmit}
@@ -133,53 +135,12 @@ const SignUpPage = () => {
                 ))}
               </div>
             )}
-            <input
-              type="text"
-              name="first_name"
-              placeholder="First Name"
-              onChange={handleChange}
-              required
-              style={{ fontSize: "1.1rem", padding: "16px" }}
-            />
-            <input
-              type="text"
-              name="last_name"
-              placeholder="Last Name"
-              onChange={handleChange}
-              required
-              style={{ fontSize: "1.1rem", padding: "16px" }}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              onChange={handleChange}
-              required
-              style={{ fontSize: "1.1rem", padding: "16px" }}
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              onChange={handleChange}
-              required
-              style={{ fontSize: "1.1rem", padding: "16px" }}
-            />
-            <input
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              onChange={handleChange}
-              required
-              style={{ fontSize: "1.1rem", padding: "16px" }}
-            />
-            <input
-              type="file"
-              name="profilePicture"
-              accept="image/*"
-              onChange={handleChange}
-              style={{ fontSize: "1.1rem" }}
-            />
+            <input type="text" name="first_name" placeholder="First Name" onChange={handleChange} required style={{ fontSize: "1.1rem", padding: "16px" }} />
+            <input type="text" name="last_name" placeholder="Last Name" onChange={handleChange} required style={{ fontSize: "1.1rem", padding: "16px" }} />
+            <input type="email" name="email" placeholder="Email" onChange={handleChange} required style={{ fontSize: "1.1rem", padding: "16px" }} />
+            <input type="password" name="password" placeholder="Password" onChange={handleChange} required style={{ fontSize: "1.1rem", padding: "16px" }} />
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} required style={{ fontSize: "1.1rem", padding: "16px" }} />
+            <input type="file" name="profilePicture" accept="image/*" onChange={handleChange} style={{ fontSize: "1.1rem" }} />
             <button
               type="submit"
               disabled={loading || !csrfToken}
@@ -204,8 +165,9 @@ const SignUpPage = () => {
             </a>
           </p>
         </>
+      ) : (
+        <p>Loading signup form...</p>
       )}
-      {!csrfToken && <p>Loading signup form...</p>}
     </div>
   );
 };
