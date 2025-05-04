@@ -14,27 +14,32 @@ import {
 const DashboardPage = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // 👈 Add loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
+    const checkUser = () => {
+      const storedUser = localStorage.getItem("user");
 
-    if (storedUser && storedUser !== "undefined") {
-      try {
-        const parsedUser = JSON.parse(storedUser);
-        setUser(parsedUser);
-        console.log("✅ User loaded:", parsedUser);
-      } catch (error) {
-        console.error("❌ Error parsing user data:", error);
-        localStorage.removeItem("user"); // Clean up invalid user
-        navigate("/signin");
+      if (storedUser && storedUser !== "undefined") {
+        try {
+          const parsedUser = JSON.parse(storedUser);
+          setUser(parsedUser);
+          console.log("✅ User loaded:", parsedUser);
+        } catch (error) {
+          console.error("❌ Error parsing user data:", error);
+          localStorage.removeItem("user");
+          navigate("/signin");
+        }
+      } else {
+        console.warn("⚠️ No valid user found, redirecting...");
+        setTimeout(() => navigate("/signin"), 150); // Slight delay to let storage settle
       }
-    } else {
-      console.warn("⚠️ No valid user found, redirecting...");
-      navigate("/signin");
-    }
 
-    setLoading(false); // ✅ Set loading to false after check
+      setLoading(false);
+    };
+
+    // Slight delay on first load to allow for smoother storage sync
+    setTimeout(checkUser, 100);
   }, [navigate]);
 
   const handleLogout = () => {
@@ -57,8 +62,7 @@ const DashboardPage = () => {
   };
 
   if (loading) return <p>Loading user data...</p>;
-
-  if (!user) return null; // Prevent rendering if user is null and already redirected
+  if (!user) return null;
 
   return (
     <div style={containerStyle}>
