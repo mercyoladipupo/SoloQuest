@@ -74,21 +74,24 @@ const CreateItineraryPage = () => {
                     <div key={index} style={stopCard}>
                         <div style={stopFields}>
                             <div style={dateTimeGroup}>
+                                <label style={labelStyle}>Date</label>
                                 <input
                                     type="date"
                                     value={item.date}
                                     onChange={(e) => handleChange(index, "date", e.target.value)}
                                     required
-                                    style={inputStyle}
+                                    style={dateTimeInputStyle}
                                 />
+                                <label style={labelStyle}>Time</label>
                                 <input
                                     type="time"
                                     value={item.time}
                                     onChange={(e) => handleChange(index, "time", e.target.value)}
                                     required
-                                    style={inputStyle}
+                                    style={dateTimeInputStyle}
                                 />
                             </div>
+
                             <input
                                 type="text"
                                 placeholder="Location"
@@ -131,7 +134,7 @@ const CreateItineraryPage = () => {
     );
 };
 
-// Styling
+// Styles
 const pageStyle = {
     padding: "40px",
     maxWidth: "900px",
@@ -190,7 +193,25 @@ const stopFields = {
 const dateTimeGroup = {
     display: "flex",
     flexDirection: "column",
-    gap: "10px"
+    gap: "10px",
+    marginBottom: "10px"
+};
+
+const labelStyle = {
+    color: "#fff",
+    fontWeight: "500",
+    fontSize: "1rem",
+    marginTop: "10px"
+};
+
+const dateTimeInputStyle = {
+    width: "100%",
+    padding: "14px",
+    fontSize: "1rem",
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    marginTop: "4px",
+    boxSizing: "border-box"
 };
 
 const addButton = {
