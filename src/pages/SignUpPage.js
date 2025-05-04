@@ -101,8 +101,8 @@ const SignUpPage = () => {
         localStorage.setItem("refresh_token", data.refresh);
         localStorage.setItem("user", JSON.stringify(data.user));
 
-        // ✅ Redirect to dashboard (NO reload needed)
         navigate("/dashboard", { state: { user: data.user } });
+        window.location.reload();
       } else {
         const errorData = await response.json();
         alert(errorData.error || "An error occurred during sign-up.");
@@ -118,9 +118,7 @@ const SignUpPage = () => {
   return (
     <div style={{ textAlign: "center", padding: "50px" }}>
       <h2>Sign Up</h2>
-      <p style={{ fontSize: "2rem" }}>
-        Create an account to join the SoloQuest community!
-      </p>
+      <p style={{fontSize: "2rem" }}>Create an account to join the SoloQuest community!</p>
       {csrfToken && (
         <>
           <form
