@@ -11,7 +11,8 @@ const getAuthHeaders = () => {
 const ConnectTravelers = () => {
   const [users, setUsers] = useState([]);
   const [friends, setFriends] = useState([]);
-  const [requests, setRequests] = useState([]);
+  const [requestsSent, setRequestsSent] = useState([]);
+  const [requestsReceived, setRequestsReceived] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("users");
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,7 +28,7 @@ const ConnectTravelers = () => {
     await Promise.all([
       fetchUsers(),
       fetchFriends(),
-      fetchRequests(),
+      fetchRequests()
     ]);
     setLoading(false);
   };
@@ -49,9 +50,7 @@ const ConnectTravelers = () => {
         headers: getAuthHeaders(),
       });
       const currentUserId = loggedInUser.id;
-      const friendList = response.data.map(f => {
-        return f.user1.id === currentUserId ? f.user2 : f.user1;
-      });
+      const friendList = response.data.map(f => f.user1.id === currentUserId ? f.user2 : f.user1);
       setFriends(friendList);
     } catch (error) {
       console.error("❌ Error fetching friends:", error.response?.data || error.message);
@@ -64,17 +63,10 @@ const ConnectTravelers = () => {
         headers: getAuthHeaders(),
       });
       const userId = loggedInUser?.id;
-      const filtered = response.data
-        .filter(req =>
-          (req.sender.id === userId || req.receiver.id === userId) && req.status === "pending"
-        )
-        .map(req => ({
-          id: req.id,
-          sender: req.sender,
-          receiver: req.receiver,
-          status: req.status
-        }));
-      setRequests(filtered);
+      const sent = response.data.filter(req => req.sender.id === userId && req.status === "pending");
+      const received = response.data.filter(req => req.receiver.id === userId && req.status === "pending");
+      setRequestsSent(sent);
+      setRequestsReceived(received);
     } catch (error) {
       console.error("❌ Error fetching friend requests:", error.response?.data || error.message);
     }
@@ -114,7 +106,7 @@ const ConnectTravelers = () => {
       await axios.delete(`${API_BASE_URL}/api/delete-friend-request/${requestId}/`, {
         headers: getAuthHeaders(),
       });
-      setRequests(prev => prev.filter(req => req.id !== requestId));
+      fetchRequests();
     } catch (error) {
       console.error("❌ Error deleting friend request:", error.response?.data || error.message);
     }
@@ -133,9 +125,8 @@ const ConnectTravelers = () => {
 
       <div style={styles.tabs}>
         <button style={activeTab === "users" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("users")}>All Users</button>
-
-        <button style={activeTab === "requests" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("requests")}>Friend Requests {requests.length > 0 && <span style={styles.badge}>{requests.length}</span>}</button>
-
+        <button style={activeTab === "requests-sent" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("requests-sent")}>Sent Requests {requestsSent.length > 0 && <span style={styles.badge}>{requestsSent.length}</span>}</button>
+        <button style={activeTab === "requests-received" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("requests-received")}>Received Requests {requestsReceived.length > 0 && <span style={styles.badge}>{requestsReceived.length}</span>}</button>
         <button style={activeTab === "friends" ? styles.activeTab : styles.tab} onClick={() => setActiveTab("friends")}>Friends {friends.length > 0 && <span style={styles.badge}>{friends.length}</span>}</button>
       </div>
 
@@ -163,25 +154,28 @@ const ConnectTravelers = () => {
         </>
       )}
 
-      {activeTab === "requests" && (
+      {activeTab === "requests-sent" && (
         <ul style={styles.list}>
-          {requests.map(request => (
+          {requestsSent.map(request => (
             <li key={request.id} style={styles.userCard}>
-              {request.sender.id === loggedInUser.id
-                ? `${request.receiver.first_name} ${request.receiver.last_name} (${request.receiver.email})`
-                : `${request.sender.first_name} ${request.sender.last_name} (${request.sender.email})`}
+              {request.receiver.first_name} {request.receiver.last_name} ({request.receiver.email})
               <div>
-                {request.sender.id === loggedInUser.id ? (
-                  <>
-                    <span style={styles.pendingLabel}>Pending</span>
-                    <button onClick={() => deleteFriendRequest(request.id)} style={styles.deleteButton}>Cancel Request</button>
-                  </>
-                ) : (
-                  <>
-                    <button onClick={() => acceptFriendRequest(request.id)} style={styles.button}>Accept</button>
-                    <button onClick={() => deleteFriendRequest(request.id)} style={styles.deleteButton}>Delete</button>
-                  </>
-                )}
+                <span style={styles.pendingLabel}>Pending</span>
+                <button onClick={() => deleteFriendRequest(request.id)} style={styles.deleteButton}>Cancel Request</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {activeTab === "requests-received" && (
+        <ul style={styles.list}>
+          {requestsReceived.map(request => (
+            <li key={request.id} style={styles.userCard}>
+              {request.sender.first_name} {request.sender.last_name} ({request.sender.email})
+              <div>
+                <button onClick={() => acceptFriendRequest(request.id)} style={styles.button}>Accept</button>
+                <button onClick={() => deleteFriendRequest(request.id)} style={styles.deleteButton}>Decline</button>
               </div>
             </li>
           ))}
