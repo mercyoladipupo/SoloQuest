@@ -96,10 +96,8 @@ const SignUpPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem("access_token", data.access);
-        localStorage.setItem("refresh_token", data.refresh);
-        localStorage.setItem("user", JSON.stringify(data.user));
-        navigate("/dashboard");
+        alert("🎉 Sign-up successful! Please sign in now with your credentials.");
+        navigate("/signin");
       } else {
         const backendErrors = data?.errors || data?.detail || data?.error;
         alert(backendErrors || "An error occurred during sign-up.");
