@@ -88,9 +88,6 @@ const SignUpPage = () => {
       const API_BASE_URL = process.env.REACT_APP_API_URL || "https://soloquest.onrender.com";
       const response = await fetch(`${API_BASE_URL}/api/signup/`, {
         method: "POST",
-        headers: {
-          "X-CSRFToken": csrfToken,
-        },
         body: formDataToSend,
         credentials: "include",
       });
@@ -100,9 +97,7 @@ const SignUpPage = () => {
         localStorage.setItem("access_token", data.access);
         localStorage.setItem("refresh_token", data.refresh);
         localStorage.setItem("user", JSON.stringify(data.user));
-
         navigate("/dashboard", { state: { user: data.user } });
-        window.location.reload();
       } else {
         const errorData = await response.json();
         alert(errorData.error || "An error occurred during sign-up.");
@@ -118,7 +113,7 @@ const SignUpPage = () => {
   return (
     <div style={{ textAlign: "center", padding: "50px" }}>
       <h2>Sign Up</h2>
-      <p style={{fontSize: "2rem" }}>Create an account to join the SoloQuest community!</p>
+      <p style={{ fontSize: "2rem" }}>Create an account to join the SoloQuest community!</p>
       {csrfToken && (
         <>
           <form
