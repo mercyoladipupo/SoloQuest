@@ -1,27 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaUser, FaHeart, FaUsers, FaPlus, FaList, FaPen, FaTrash, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaUser,
+  FaHeart,
+  FaUsers,
+  FaPlus,
+  FaList,
+  FaPen,
+  FaTrash,
+  FaSignOutAlt,
+} from "react-icons/fa";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // 👈 Add loading state
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
 
-    if (storedUser) {
+    if (storedUser && storedUser !== "undefined") {
       try {
         const parsedUser = JSON.parse(storedUser);
         setUser(parsedUser);
         console.log("✅ User loaded:", parsedUser);
       } catch (error) {
         console.error("❌ Error parsing user data:", error);
-        setUser(null);
+        localStorage.removeItem("user"); // Clean up invalid user
+        navigate("/signin");
       }
     } else {
-      console.warn("⚠️ No user found, redirecting to sign-in...");
+      console.warn("⚠️ No valid user found, redirecting...");
       navigate("/signin");
     }
+
+    setLoading(false); // ✅ Set loading to false after check
   }, [navigate]);
 
   const handleLogout = () => {
@@ -43,12 +56,16 @@ const DashboardPage = () => {
     }
   };
 
-  if (!user) return <p>Loading user data...</p>;
+  if (loading) return <p>Loading user data...</p>;
+
+  if (!user) return null; // Prevent rendering if user is null and already redirected
 
   return (
     <div style={containerStyle}>
       <h2>Welcome, {user.first_name} {user.last_name}!</h2>
-      <p style={{ fontSize: "18px", color: "#ccc" }}>We’re glad to have you on <strong>SoloQuest</strong>.</p>
+      <p style={{ fontSize: "18px", color: "#ccc" }}>
+        We’re glad to have you on <strong>SoloQuest</strong>.
+      </p>
 
       <blockquote style={quoteStyle}>
         "Travel far, travel wide, and discover parts of yourself you never knew existed."
