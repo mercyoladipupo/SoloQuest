@@ -46,12 +46,10 @@ const ConnectTravelers = () => {
 
   const fetchFriends = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/friends/`, {
+      const response = await axios.get(`${API_BASE_URL}/api/users/my_friends/`, {
         headers: getAuthHeaders(),
       });
-      const currentUserId = loggedInUser.id;
-      const friendList = response.data.map(f => f.user1.id === currentUserId ? f.user2 : f.user1);
-      setFriends(friendList);
+      setFriends(response.data);
     } catch (error) {
       console.error("❌ Error fetching friends:", error.response?.data || error.message);
     }
