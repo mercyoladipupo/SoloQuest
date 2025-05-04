@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import './global.css';
 import countryList from './countryCodes';
 import { Circles } from 'react-loader-spinner';
 import LandingPage from './pages/LandingPage';
@@ -16,6 +17,7 @@ import BlogPage from './pages/BlogPage';
 import ConnectTravelers from './pages/Connect';
 import CreateItinerary from "./pages/CreateItinerary";
 import MyItinerariesPage from './pages/MyItineraries';
+
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
