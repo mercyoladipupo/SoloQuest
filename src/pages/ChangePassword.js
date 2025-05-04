@@ -34,7 +34,7 @@ const ChangePasswordPage = () => {
         const API_BASE_URL = process.env.REACT_APP_API_URL || "https://soloquest.onrender.com";
 
         try {
-            const accessToken = localStorage.getItem("access_token");
+            const accessToken = localStorage.getItem("access");
 
             const response = await fetch(`${API_BASE_URL}/api/change-password/`, {
                 method: "POST",
