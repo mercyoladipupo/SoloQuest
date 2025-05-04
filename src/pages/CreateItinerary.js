@@ -35,12 +35,11 @@ const CreateItineraryPage = () => {
             const response = await fetch("https://soloquest.onrender.com/api/itinerary/", {
                 method: "POST",
                 headers: {
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${localStorage.getItem("access")}`,
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("access")}`,
                 },
                 body: JSON.stringify({ title, items }),
-              });
-              
+            });
 
             if (!response.ok) {
                 const data = await response.json();
@@ -74,11 +73,43 @@ const CreateItineraryPage = () => {
                 {items.map((item, index) => (
                     <div key={index} style={stopCard}>
                         <div style={stopFields}>
-                            <input type="date" value={item.date} onChange={(e) => handleChange(index, "date", e.target.value)} required style={inputStyle} />
-                            <input type="time" value={item.time} onChange={(e) => handleChange(index, "time", e.target.value)} style={inputStyle} />
-                            <input type="text" placeholder="Location" value={item.location} onChange={(e) => handleChange(index, "location", e.target.value)} required style={inputStyle} />
-                            <input type="text" placeholder="Activity" value={item.activity} onChange={(e) => handleChange(index, "activity", e.target.value)} style={inputStyle} />
-                            <textarea placeholder="Notes" value={item.notes} onChange={(e) => handleChange(index, "notes", e.target.value)} style={textareaStyle} />
+                            <div style={dateTimeGroup}>
+                                <input
+                                    type="date"
+                                    value={item.date}
+                                    onChange={(e) => handleChange(index, "date", e.target.value)}
+                                    required
+                                    style={inputStyle}
+                                />
+                                <input
+                                    type="time"
+                                    value={item.time}
+                                    onChange={(e) => handleChange(index, "time", e.target.value)}
+                                    required
+                                    style={inputStyle}
+                                />
+                            </div>
+                            <input
+                                type="text"
+                                placeholder="Location"
+                                value={item.location}
+                                onChange={(e) => handleChange(index, "location", e.target.value)}
+                                required
+                                style={inputStyle}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Activity"
+                                value={item.activity}
+                                onChange={(e) => handleChange(index, "activity", e.target.value)}
+                                style={inputStyle}
+                            />
+                            <textarea
+                                placeholder="Notes"
+                                value={item.notes}
+                                onChange={(e) => handleChange(index, "notes", e.target.value)}
+                                style={textareaStyle}
+                            />
                         </div>
                         {items.length > 1 && (
                             <button type="button" onClick={() => removeItem(index)} style={removeButton}>
@@ -129,10 +160,12 @@ const formStyle = {
 const inputStyle = {
     display: "block",
     width: "100%",
-    padding: "10px",
+    padding: "12px",
     margin: "10px 0",
-    borderRadius: "5px",
-    border: "1px solid #ccc"
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    fontSize: "1rem",
+    boxSizing: "border-box"
 };
 
 const textareaStyle = {
@@ -152,6 +185,12 @@ const stopCard = {
 const stopFields = {
     display: "flex",
     flexDirection: "column"
+};
+
+const dateTimeGroup = {
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px"
 };
 
 const addButton = {
