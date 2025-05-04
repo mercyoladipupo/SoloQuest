@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignInPage = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
+  const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -14,6 +16,10 @@ const SignInPage = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     setErrorMessage("");
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(prev => !prev);
   };
 
   const handleSubmit = async (e) => {
@@ -60,9 +66,11 @@ const SignInPage = () => {
       <p style={{ fontSize: "1.25rem", marginBottom: "30px" }}>
         Sign in to your SoloQuest account
       </p>
+
       {errorMessage && (
         <p style={{ color: "red", fontSize: "1.1rem", marginBottom: "25px" }}>{errorMessage}</p>
       )}
+
       <form onSubmit={handleSubmit} style={{ maxWidth: "500px", margin: "0 auto" }}>
         <div style={{ marginBottom: "25px" }}>
           <label htmlFor="email" style={{ display: "block", fontSize: "1.2rem", marginBottom: "10px" }}>
@@ -86,12 +94,13 @@ const SignInPage = () => {
             disabled={loading}
           />
         </div>
-        <div style={{ marginBottom: "25px" }}>
+
+        <div style={{ marginBottom: "25px", position: "relative" }}>
           <label htmlFor="password" style={{ display: "block", fontSize: "1.2rem", marginBottom: "10px" }}>
             Password:
           </label>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
             name="password"
             value={formData.password}
@@ -107,7 +116,21 @@ const SignInPage = () => {
             }}
             disabled={loading}
           />
+          <span
+            onClick={togglePasswordVisibility}
+            style={{
+              position: "absolute",
+              top: "55%",
+              right: "16px",
+              transform: "translateY(-50%)",
+              cursor: "pointer",
+              color: "#666"
+            }}
+          >
+            {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+          </span>
         </div>
+
         <button
           type="submit"
           disabled={loading}
@@ -126,7 +149,6 @@ const SignInPage = () => {
         </button>
       </form>
 
-      {/* Sign up link */}
       <p style={{ marginTop: "25px", fontSize: "2rem" }}>
         Not a member?{" "}
         <a href="/signup" style={{ color: "#007bff", textDecoration: "underline" }}>
