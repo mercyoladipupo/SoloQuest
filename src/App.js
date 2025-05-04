@@ -300,6 +300,85 @@ function App() {
       a:hover {
         text-decoration: underline;
       }
+
+      @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 1; }
+          }
+
+          .App-header {
+            min-height: 100vh;
+            background-color: #1f2937;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            padding: 2rem 1rem;
+          }
+
+          nav {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+          }
+
+          a {
+            color: #61dafb;
+            text-decoration: none;
+            font-weight: 500;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+
+          form, .safety-data, .country-list-modal {
+            max-width: 600px;
+            width: 100%;
+            margin: 1rem auto;
+            text-align: left;
+          }
+
+          input[type="text"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+          }
+
+          button {
+            margin: 0.25rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #38bdf8;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+
+          button:hover {
+            background-color: #0ea5e9;
+          }
+
+          @media (max-width: 600px) {
+            nav {
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .App-header {
+              padding: 1rem;
+            }
+
+            button, input[type="text"] {
+              width: 100%;
+            }
+          }
 `}</style>
 
 
