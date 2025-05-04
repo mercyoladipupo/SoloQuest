@@ -150,9 +150,17 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <nav>
-            <Link to="/">Home</Link> | <Link to="/signin">Sign In</Link> | <Link to="/signup">Sign Up</Link> | <Link to="/safety-advisories">Safety Advisories</Link> | <Link to="/dashboard">Dashboard</Link> | <Link to="/blogpage">Blogs</Link>
-          </nav>
+        <nav>
+  <Link to="/">Home</Link>
+  <Link to="/signin">Sign In</Link>
+  <Link to="/signup">Sign Up</Link>
+  <Link to="/safety-advisories">Safety Advisories</Link>
+  <Link to="/dashboard">Dashboard</Link>
+  <Link to="/blogpage">Blogs</Link>
+</nav>
+
+
+          
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/signin" element={<SignInPage />} />
@@ -300,6 +308,13 @@ function App() {
       a:hover {
         text-decoration: underline;
       }
+
+      @media (max-width: 600px) {
+  nav a {
+    margin-bottom: 12px;
+  }
+}
+
 
       @keyframes pulse {
             0% { transform: scale(1); opacity: 1; }
