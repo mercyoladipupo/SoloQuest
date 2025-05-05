@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# SoloQuest
+An all-in-one travel companion app for solo travellers — combining real-time safety alerts, itinerary planning, social features, and blogging.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🌍 Live Demo
+Try it here 👉 https://solo-quest.vercel.app/
 
-## Available Scripts
+## 📑 Table of Contents
+- [About the Project](#-about-the-project)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Installation](#-installation)
+- [API Overview](#-api-overview)
+- [Screenshots](#-screenshots)
+- [Future Work](#-future-enhancements)
+- [License](#-license)
 
-In the project directory, you can run:
+## 🧭 About the Project
+SoloQuest is a full-stack travel web app designed to support and empower solo travellers. It combines practical travel tools with social connection features — all in one platform. Built as a final-year university project.
 
-### `npm start`
+## ✨ Features
+- 🔐 JWT-based user authentication
+- 🧭 Safety alerts with fallback data
+- 📅 Itinerary planner
+- ✍️ Travel blogs with categories and comments
+- 🌍 Connect with fellow solo travellers via friend requests
+- 💬 Responsive UI with mobile support
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Tech Stack
+**Frontend:** Vue.js, Bootstrap, Vuex  
+**Backend:** Django, Django REST Framework, SQLite  
+**Authentication:** JWT  
+**External APIs:** Travel Advisory API, Safety Alerts API  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Installation
 
-### `npm test`
+### Frontend (Vue.js)
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend (Django)
+```bash
+cd backend
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
 
-### `npm run build`
+## 🔗 API Overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `POST /api/token/` – Login (returns JWT)
+- `GET /api/posts/` – View blog posts
+- `GET /api/safety/?country=UG` – Get safety data
+- `POST /api/send-request/` – Send a friend request  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔮 Future Enhancements
+- AI-powered itinerary recommendations
+- Real-time chat between travellers
+- Multi-language support
+- Offline mode for safety data
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📄 License
+This project is for academic use only and not intended for commercial distribution.
